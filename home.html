@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+
+  
+  <link rel="stylesheet" href="./css/home.css">
+  <link rel="stylesheet" href="./js/bootstrap.css">
+  <link rel="stylesheet" href="./js/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/Login_Signup.css">
+
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="../js/bootstrap.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <style>
+
+
+  </style>
+  
+</head>
+<body>
+
+  <header>
+
+    <div id="personal-info">
+      👤 Thái Văn Trung<br>
+      🎓 MSSV: 22696241
+    </div>
+
+    <div id="auth-buttons">
+      <button id="login-btn">Đăng nhập</button>
+      <button id="signup-btn">Đăng ký</button>
+
+    </div>
+
+   
+    <div id="login-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="close-login">&times;</span>
+        <h3>Đăng nhập</h3>
+        <form id="login-form">
+          <label for="username">Tài khoản:</label>
+          <input type="text" id="username" name="username" required>
+          <div id="login-username-error" class="error-message"></div>
+
+          <label for="password">Mật khẩu:</label>
+          <input type="password" id="password" name="password" required>
+          <div id="login-password-error" class="error-message"></div>
+
+          <button type="submit">Đăng nhập</button>
+        </form>
+        <p class="switch">Chưa có tài khoản? <a href="#" id="switch-to-signup">Đăng ký ngay</a></p>
+      </div>
+    </div>
+
+    
+    <div id="signup-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="close-signup">&times;</span>
+        <h3>Đăng ký</h3>
+        <form id="signup-form">
+          <label for="new-username">Tên tài khoản:</label>
+          <input type="text" id="new-username" name="new-username" required>
+          <div id="signup-username-error" class="error-message"></div>
+
+          <label for="new-password">Mật khẩu:</label>
+          <input type="password" id="new-password" name="new-password" required>
+          <div id="signup-password-error" class="error-message"></div>
+
+          <label for="phone">SĐT:</label>
+          <input type="tel" id="phone" name="phone" required>
+          <div id="signup-phone-error" class="error-message"></div>
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+          <div id="signup-email-error" class="error-message"></div>
+
+          <button type="submit">Đăng ký</button>
+        </form>
+        <p class="switch">Đã có tài khoản? <a href="#" id="switch-to-login">Đăng nhập</a></p>
+      </div>
+    </div>
+
+
+    <div id="user-info" style="
+    display: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+    padding-right: 20px;
+    position: relative;">
+    
+    <span style="
+      position: absolute;
+      left: 480px;
+      top: 20px;
+      font-size: 24px;
+      font-weight: bold;
+      color: aliceblue;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-shadow: 1px 1px 2px #ccc;">
+      ✨ Chào mừng đến với thế giới Love Chocolate ✨
+    </span>
+  
+    <span id="user-name">👤</span>
+    <a href="./Giohang.html" style="text-decoration: none;"><span id="cart-count" style="color: black;">🛒</span></a>
+    
+    <button id="logout-btn" class="logout-button">Đăng xuất</button>
+
+  </div>
+  
+    
+    
+
+    <div id="navheader">
+      <ul>
+        <li><a href="./home.html">Trang Chủ</a></li>
+        <li>
+        <a href="#">Hàng ngoại nhập</a>
+          <ul id="sub_menu_wedding">
+            <li><a href="./MrBeast.html">Mr Beast</a></li>
+            <li><a href="./Hershey.html">Her'shey</a></li>
+            <li><a href="./Kitkat.html">Kitkat</a></li>
+          </ul>
+        </li>
+        <li>
+        <a href="./home.html">Hàng Việt Nam</a>
+          <ul id="submenu_thoinoi">
+            <li><a href="./Thechoco.html">The Choco</a></li>
+            <li><a href="./MaisonMarou.html">Maison Marou</a></li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="#">Quà tặng</a>
+          <ul id="submenu_giangsinh">
+            <li><a href="./Basic.html">Basic</a></li>
+            <li><a href="./Luxury.html">Luxury</a></li>
+          </ul>
+        </li>
+
+
+        <li>
+          <a href="#">Dịp lễ</a>
+          <ul id="submenu_sinhnhat">
+            <li><a href="./Ngayle.html">Ngày lễ</a></li>
+            <li><a href="./Ani.html">Kỉ niệm</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Liên Hệ</a>
+          <ul id="submenu_lienhe">
+            <li><a href="#">Phone/Zalo : 0878634443</a></li>
+            <li><a href="#">Email : tt721886@gmail.com</a></li>
+          </ul>
+        
+        
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <section id="section1">
+    <div class="intro-container">
+      <div class="intro-text">
+        <h2>Chào mừng đến với Thế giới Chocolate!</h2>
+        <p>
+          Chúng tôi chuyên cung cấp các loại Socola chất lượng - độc đáo - và đa dạng các loại. . Mỗi sản phẩm là một hương vị đặc biệt mang thông điệp yêu thương
+           đầy cảm xúc.
+        </p>
+        <p>
+          Hãy để những thanh Chocolate của chúng tôi thay bạn gửi sự ngọt ngào và tốt đẹp 
+          đến những người thân yêu.
+        </p>
+      </div>
+      <div class="intro-slider">
+        <img id="slider-image" src="./img/s1-removebg-preview.png" alt="">
+      </div>
+    </div>
+  </section>
+
+  <section id="section2">
+
+    <!-- -----------------------------------------------------------ĐÁM CƯỚI ----------------------------------- -->
+     <!-- -------------THIỆP GIẤY-------------mrbeast -->
+    <a href="./Giohang.html">
+      <div class="product-box">
+        <img src="./img/Chocolate_Ngoai/Mr.Beast/beast1.webp" alt="Tên mẫu" class="product-image" />
+        <div class="product-info">
+          <h4>Mr.Beast: Socola Mix 3 loại</h4>
+          <p>Giá: 120.000đ</p>
+          <p>Đơn vị : bịch 36 cái</p>
+          <p>Mã SP: WD1</p>
+          <p>Mix 3 loại, thoải mái thử vị</p>
+          <button class="add-to-cart" data-name="" data-price="120000" data-id="WD1">Thêm vào giỏ hàng</button>
+        </div>
+      </div>
+    </a>
+
+    <a href="./Giohang.html">
+      <div class="product-box">
+        <img src="./img/Chocolate_Ngoai/Mr.Beast/beast2.jfif" alt="Tên mẫu" class="product-image" />
+        <div class="product-info">
+          <h4>Mr.Beast: Milk Chocolate</h4>
+          <p>Giá: 120.500đ</p>
+          <p>Đơn vị : 1 thanh</p>
+          <p>Mã SP: WD2</p>
+          <p>Nhiều sữa, ngọt nhẹ</p>
+          <button class="add-to-cart" data-name="" data-price="120500" data-id="WD2">Thêm vào giỏ hàng</button>
+        </div>
+      </div>
+    </a>
+    <a href="./Giohang.html">
+      <div class="product-box">
+        <img src="./img/Chocolate_Ngoai/Mr.Beast/beast3.webp" alt="Tên mẫu" class="product-image" />
+        <div class="product-info">
+          <h4>Mr.Beast: Peaut Butter Crunch</h4>
+          <p>Giá: 110.000đ</p>
+          <p>Đơn vị : 1 thanh</p>
+
+          <p>Mã SP: WD3</p>
+          <p>Thêm vị butter, ngọt nhiều</p>
+          <button class="add-to-cart" data-name="" data-price="110000" data-id="WD3">Thêm vào giỏ hàng</button>
+        </div>
+      </div>
+    </a>
+<!-- -------------THIỆP 3D----------kitkat----------- -->
+    <a href="./Giohang.html">
+      <div class="product-box">
+        <img src="./img/Chocolate_Ngoai/KitKat/kk1.jpg" alt="Tên mẫu" class="product-image" />
+        <div class="product-info">
+          <h4>Kitkat: Chungky thanh</h4>
+          <p>Giá: 14.000đ</p>
+          <p>Đơn vị : 1 thanh</p>
+          <p>Mã SP: WD3D1</p>
+          <p>Kitkat chuẩn vị truyền thống</p>
+          <button class="add-to-cart" data-name="" data-price="14000" data-id="WD3D1">Thêm vào giỏ hàng</button>
+        </div>
+      </div>
+    </a>
+    <a href="./Giohang.html">
+      <div class="product-box">
+        <img src="./img/Chocolate_Ngoai/KitKat/kk3.jfif" alt="Tên mẫu" class="product-image" />
+        <div class="product-info">
+          <h4>Kitkat: More Choco-Creams</h4>
+          <p>Giá: 15.000đ</p>
+          <p>Đơn vị : 1 thanh</p>
+          <p>Mã SP: WD3D2</p>
+          <p>Nhiều kem, béo ngậy và thanh mát</p>
+          <button class="add-to-cart" data-name="" data-price="15000" data-id="WD3D2">Thêm vào giỏ hàng</button>
+        </div>
+      </div>
+    </a>
+    <a href="./Giohang.html">
+      <div class="product-box">
+        <img src="./img/Chocolate_Ngoai/KitKat/kk4.webp" alt="Tên mẫu" class="product-image" />
+        <div class="product-info">
+          <h4>Kitkat: Hạnh nhân</h4>
+          <p>Giá: 12.000đ</p>
+          <p>Đơn vị  : 1 thanh</p>
+          <p>Mã SP: WD3D3</p>
+          <p>Nhân hạnh nhân giòn tan</p>
+          <button class="add-to-cart" data-name="" data-price="12000" data-id="WD3D3">Thêm vào giỏ hàng</button>
+        </div>
+      </div>
+    </a>
+    <a href="./Giohang.html">
+      <div class="product-box">
+        <img src="./img/Chocolate_Ngoai/KitKat/kk2.jpg" alt="Tên mẫu" class="product-image" />
+        <div class="product-info">
+          <h4>Kitkat: Basic Chocolate</h4>
+          <p>Giá: 12.000đ</p>
+          <p>Đơn vị : 1 thanh</p>
+          <p>Mã SP: WD3D3</p>
+          <p>Vị truyền thống, ít ngọt</p>
+          <button class="add-to-cart" data-name="" data-price="12000" data-id="WD3D3">Thêm vào giỏ hàng</button>
+        </div>
+      </div>
+    </a>
+<!-- ------------------------THIỆP LUXURY------Her'shey-------------------- -->
+    <a href="./Giohang.html">
+      <div class="product-box">
+        <img src="./img/Chocolate_Ngoai/Hershey/hersheymix.jpg" alt="Tên mẫu" class="product-image" />
+        <div class="product-info">
+          <h4>Her'shey: Mix Her'shey</h4>
+          <p>Giá: 150.000đ</p>
+          <p>Đơn vị : túi 42 cái</p>
+          <p>Mã SP: WDL1</p>
+          <p>Túi mix Her'shey Chocolate 3 vị</p>
+          <button class="add-to-cart" data-name="" data-price="150000" data-id="WDL1">Thêm vào giỏ hàng</button>
+        </div>
+      </div>
+    </a>
+    <a href="./Giohang.html">
+      <div class="product-box">
+        <img src="./img/Chocolate_Ngoai/Hershey/hershey1.jpg" alt="Tên mẫu" class="product-image" />
+        <div class="product-info">
+          <h4>Her'shey: Hạnh nhân</h4>
+          <p>Giá: 15.000đ</p>
+          <p>Đơn vị : 1 thanh</p>
+          <p>Mã SP: WDL1</p>
+          <p>Hạnh nhân giòn tan, ngọt bùi</p>
+          <button class="add-to-cart" data-name="" data-price="15000" data-id="WDL1">Thêm vào giỏ hàng</button>
+        </div>
+      </div>
+    </a>
+    <a href="./Giohang.html">
+      <div class="product-box">
+        <img src="./img/Chocolate_Ngoai/Hershey/hershey2.webp" alt="Tên mẫu" class="product-image" />
+        <div class="product-info">
+          <h4>Her'shey: Snack Size</h4>
+          <p>Giá: 18.000đ</p>
+          <p>Đơn vị : 1 bịch </p>
+          <p>Mã SP: WDL1</p>
+          <p>Size lớn, đậm vị choco, đắng nhẹ</p>
+          <button class="add-to-cart" data-name="" data-price="18000" data-id="WDL1">Thêm vào giỏ hàng</button>
+        </div>
+      </div>
+    </a>
+    <a href="./Giohang.html">
+      <div class="product-box">
+        <img src="./img/Chocolate_Ngoai/Hershey/hershey3.webp" alt="Tên mẫu" class="product-image" />
+        <div class="product-info">
+          <h4>Her'shey: ChocoBall</h4>
+          <p>Giá: 30.000đ</p>
+          <p>Đơn vị : bịch 12 viên</p>
+          <p>Mã SP: WDL1</p>
+          <p>Choco viên, nhân socola thơm béo</p>
+          <p></p>
+          <button class="add-to-cart" data-name="" data-price="30000" data-id="WDL1">Thêm vào giỏ hàng</button>
+        </div>
+      </div>
+    </a>
+
+
+
+
+
+<!-- --------------------------------THIỆP THÔI NÔI-- nội địa--------------- -->
+ <!-- ---------THIỆP GIẤY-------the choco------------- -->
+
+
+    <a href="./Giohang.html">
+      <div class="product-box">
+        <img src="./img/Chocolate_Noi/TheChocoVN/cc1.jpg" alt="Tên mẫu" class="product-image" />
+        <div class="product-info">
+          <h4>The Choco : Vị việt quất </h4>
+          <p>Giá: 120.000đ</p>
+          <p>Đơn vị : hộp 12 viên</p>
+          <p>Mã SP: TNG1</p>
+          <p>Vị việt quất thơm mát, ngọt dịu</p>
+          <button class="add-to-cart" data-name="" data-price="120000" data-id="TNG1">Thêm vào giỏ hàng</button>
+        </div>
+      </div>
+    </a>
+    <a href="./Giohang.html">
+      <div class="product-box">
+        <img src="./img/Chocolate_Noi/TheChocoVN/cc2.jpg" alt="Tên mẫu" class="product-image" />
+        <div class="product-info">
+          <h4>The Choco : Matcha Chocolate</h4>
+          <p>Giá: 80.000đ</p>
+          <p>Đơn vị : hộp 12 viên</p>
+
+          <p>Mã SP: TNG2</p>
+          <p>Vị matcha tươi mới, đắng nhẹ</p>
+          <button class="add-to-cart" data-name="" data-price="8000" data-id="TNG2">Thêm vào giỏ hàng</button>
+        </div>
+      </div>
+    </a>
+    <a href="./Giohang.html">
+      <div class="product-box">
+        <img src="./img/Chocolate_Noi/TheChocoVN/cc3.jpg" alt="Tên mẫu" class="product-image" />
+        <div class="product-info">
+          <h4>The Choco : Choco Dâu</h4>
+          <p>Giá: 90.000đ</p>
+          <p>Đơn vị : hộp 12 viên</p>
+          <p>Mã SP: TNG3</p>
+          <p>Vị dâu thanh mát, ngọt dịu</p>
+          <button class="add-to-cart" data-name="" data-price="9000" data-id="TNG3">Thêm vào giỏ hàng</button>
+        </div>
+      </div>
+    </a>
+<!--Maison Marou  VN-->
+
+    <a href="./Giohang.html">
+      <div class="product-box">
+        <img src="./img/Chocolate_Noi/MaisonMarou/vn1.webp" alt="Tên mẫu" class="product-image" />
+        <div class="product-info">
+          <h4>Maison : Caramel Lạc muối </h4>
+          <p>Đơn vị : 1 Thanh</p>
+          <p>Giá: 198.000đ</p>
+          <p>Mã SP: TN3D1</p>
+          <p>Giòn thơm, ngọt bùi và đậm vị caramel</p>
+          <button class="add-to-cart" data-name="" data-price="198000" data-id="TN3D1">Thêm vào giỏ hàng</button>
+        </div>
+      </div>
+    </a>
+    <a href="./Giohang.html">
+      <div class="product-box">
+        <img src="./img/Chocolate_Noi/MaisonMarou/vn2.webp" alt="Tên mẫu" class="product-image" />
+        <div class="product-info">
+          <h4>Maison: Cam nguyên bản</h4>
+          <p>Giá: 120.000đ</p>
+          <p>Đơn vị: 1 hộp</p>
+          <p>Mã SP: TN3D2</p>
+          <p>Vị cam thanh mát, chua nhẹ, ngọt dịu</p>
+          <button class="add-to-cart" data-name="" data-price="120000" data-id="TN3D2">Thêm vào giỏ hàng</button>
+        </div>
+      </div>
+    </a>
+    <a href="./Giohang.html">
+      <div class="product-box">
+        <img src="./img/Chocolate_Noi/MaisonMarou/vn3.webp" alt="Tên mẫu" class="product-image" />
+        <div class="product-info">
+          <h4>Maison: kẹo dừa Bến Tre</h4>
+          <p>Giá: 140.000đ</p>
+          <p>Đơn vị : hộp</p>
+          <p>Mã SP: TN3D3</p>
+          <p>Ngọt nhiều, thơm nhẹ</p>
+          <button class="add-to-cart" data-name="" data-price="140000" data-id="TN3D3">Thêm vào giỏ hàng</button>
+        </div>
+      </div>
+    </a> 
+    <a href="./Giohang.html">
+      <div class="product-box">
+        <img src="./img/Chocolate_Noi/MaisonMarou/vn4.webp" alt="Tên mẫu" class="product-image" />
+        <div class="product-info">
+          <h4>Maison: Choco cafe sữa</h4>
+          <p>Giá: 148.000đ</p>
+          <p>Đơn vị : hộp</p>
+          <p>Mã SP: TN3D3</p>
+          <p>Vị cafe sữa, đắng nhẹ, thơm</p>
+          <button class="add-to-cart" data-name="" data-price="148000" data-id="TN3D3">Thêm vào giỏ hàng</button>
+        </div>
+      </div>
+    </a> 
+
+<!-- -----------------------THIỆP GIÁNG SINH---dịp lễ-- basic------------------ -->
+
+    <a href="./Giohang.html">
+      <div class="product-box">
+        <img src="./img/QuaTang/Basic/bs1.webp" alt="Tên mẫu" class="product-image" />
+        <div class="product-info">
+          <h4>Set Basic1 : hộp miếng vuông </h4>
+          <p>Giá: 210.000đ</p>
+          <p>Đơn vị: hộp 6 miếng vuông</p>
+          <p>Mã SP: GSG1</p>
+          <p>Phù hợp sinh nhật, mùng 8/3</p>
+          <button class="add-to-cart" data-name="" data-price="210000" data-id="GSG1">Thêm vào giỏ hàng</button>
+        </div>
+      </div>
+    </a>
+
+    <a href="./Giohang.html">
+      <div class="product-box">
+        <img src="./img/QuaTang/Basic/bs2.webp" alt="Tên mẫu" class="product-image" />
+        <div class="product-info">
+          <h4>Set Basic2 : Mini The Faiserus</h4>
+          <p>Giá: 230.000đ</p>
+          <p>Đơn vị: hộp 12 miếng</p>
+          <p>Mã SP: GSG2</p>
+          <p>Phù hợp sinh nhật, mùng 8/3</p>
+
+          <button class="add-to-cart" data-name="" data-price="230000" data-id="GSG2">Thêm vào giỏ hàng</button>
+        </div>
+      </div>
+    </a>
+    <a href="./Giohang.html">
+      <div class="product-box">
+        <img src="./img/QuaTang/Basic/bs3.webp" alt="Tên mẫu" class="product-image" />
+        <div class="product-info">
+          <h4>Set Basic3 : Faiserus Collection</h4>
+          <p>Giá: 115.500đ</p>
+          <p>Đơn vị : hộp 6 thanh</p>
+          <p>Mã SP: GSG3</p>
+          <p>Phù hợp sinh nhật, mùng 8/3</p>
+          <button class="add-to-cart" data-name="" data-price="115500" data-id="GSG3">Thêm vào giỏ hàng</button>
+        </div>
+      </div>
+    </a>
+
+    <a href="./Giohang.html">
+      <div class="product-box">
+        <img src="./img/QuaTang/Basic/bs4.webp" alt="Tên mẫu" class="product-image" />
+        <div class="product-info">
+          <h4>Set Basic4 : The Faiserus </h4>
+          <p>Giá: 110.500đ</p>
+          <p>Đơn vị : hộp 6 cái</p>
+          <p>Mã SP: GSG3</p>
+          <p>Phù hợp sinh nhật, mùng 8/3</p>
+          <button class="add-to-cart" data-name="" data-price="110500" data-id="GSG3">Thêm vào giỏ hàng</button>
+        </div>
+      </div>
+    </a>
+
+
+
+
+
+
+
+
+    <a href="./Giohang.html">
+      <div class="product-box">
+        <img src="./img/QuaTang/Lux/lux1.webp" alt="Tên mẫu" class="product-image" />
+        <div class="product-info">
+          <h4>Set Luxury1: Love In Motion </h4>
+          <p>Giá: 590.000đ</p>
+          <p>Đơn vị : hộp </p>
+          <p>Mã SP: GSG3</p>
+          <p>Quà tặng đặc biệt</p>
+          <button class="add-to-cart" data-name="" data-price="590000" data-id="GSG3">Thêm vào giỏ hàng</button>
+        </div>
+      </div>
+    </a>
+    <a href="./Giohang.html">
+      <div class="product-box">
+        <img src="./img/QuaTang/Lux/lux2.webp" alt="Tên mẫu" class="product-image" />
+        <div class="product-info">
+          <h4>Set Luxury2 : Premium 2 tầng </h4>
+          <p>Giá: 1.400.000đ</p>
+          <p>Đơn vị : hộp</p>
+          <p>Mã SP: GSG3</p>
+          <p>Quà tặng đặc biệt</p>
+          <button class="add-to-cart" data-name="" data-price="110500" data-id="GSG3">Thêm vào giỏ hàng</button>
+        </div>
+      </div>
+    </a>
+    <a href="./Giohang.html">
+      <div class="product-box">
+        <img src="./img/QuaTang/Lux/lux3.webp" alt="Tên mẫu" class="product-image" />
+        <div class="product-info">
+          <h4>Set Luxury3 : Neappolitans </h4>
+          <p>Giá: 980.000đ</p>
+          <p>Đơn vị : hộp 6 cái</p>
+          <p>Mã SP: GSG3</p>
+          <p>Quà tặng đặc biệt</p>
+          <button class="add-to-cart" data-name="" data-price="980000" data-id="GSG3">Thêm vào giỏ hàng</button>
+        </div>
+      </div>
+    </a>
+
+
+
+    <!-- -------------------------------THIỆP SINH NHẬT----------anniversary-----------------  -->
+
+
+
+    
+    <a href="./Giohang.html">
+      <div class="product-box">
+        <img src="./img/DipLe/PNVN/pn1.jfif" alt="Tên mẫu" class="product-image" />
+        <div class="product-info">
+          <h4>Dành cho dịp lễ set1</h4>
+          <p>Giá: 190.000đ</p>
+          <p>Đơn vị : hộp</p>
+          <p>Mã SP: SNG2</p>
+          <p>Lễ 8/3,20/10, 20/11</p>
+          <button class="add-to-cart" data-name="" data-price="190000" data-id="SNG2">Thêm vào giỏ hàng</button>
+        </div>
+      </div>
+    </a>
+
+   
+
+    <a href="./Giohang.html">
+      <div class="product-box">
+        <img src="./img/DipLe/PNVN/pn2.jpg" alt="Tên mẫu" class="product-image" />
+        <div class="product-info">
+          <h4>Dành cho dịp lễ set2</h4>
+          <p>Giá: 160.000đ</p>
+          <p>Đơn vị : hộp</p>
+          <p>Mã SP: SN3D1</p>
+          <p>Lễ 8/3,20/10, 20/11</p>
+          <button class="add-to-cart" data-name="" data-price="160000" data-id="SN3D1">Thêm vào giỏ hàng</button>
+        </div>
+      </div>
+    </a>
+
+    <a href="./Giohang.html">
+      <div class="product-box">
+        <img src="./img/DipLe/PNVN/pn3.jpg" alt="Tên mẫu" class="product-image" />
+        <div class="product-info">
+          <h4>Bánh choco set3 </h4>
+          <p>Giá: 98.000đ</p>
+          <p>Đơn vị : bánh</p>
+          <p>Mã SP: SN3D2</p>
+          <p>Lễ 8/3,20/10, 20/11</p>
+          <button class="add-to-cart" data-name="" data-price="99000" data-id="SN3D2">Thêm vào giỏ hàng</button>
+        </div>
+      </div>
+    </a>
+
+
+
+    <!--anniversary-->
+    <a href="./Giohang.html">
+      <div class="product-box">
+        <img src="./img/DipLe/Anniversary/vl1.jpg" alt="Tên mẫu" class="product-image" />
+        <div class="product-info">
+          <h4>Valentine Love</h4>
+          <p>Giá: 310.000đ</p>
+          <p>Đơn vị : hộp 36 viên</p>
+          <p>Mã SP: SN3D1</p>
+          <p>Valentine, Wedding, Anniversary</p>
+          <button class="add-to-cart" data-name="" data-price="310000" data-id="SN3D1">Thêm vào giỏ hàng</button>
+        </div>
+      </div>
+    </a>
+
+    <a href="./Giohang.html">
+      <div class="product-box">
+        <img src="./img/DipLe/Anniversary/vl2.jpg" alt="Tên mẫu" class="product-image" />
+        <div class="product-info">
+          <h4>Luxury Choco Pay</h4>
+          <p>Giá: 430.000đ</p>
+          <p>Đơn vị: hộp 20 viên</p>
+          <p>Mã SP: SN3D2</p>
+          <p>Valentine, Wedding, Anniversary</p>
+          <button class="add-to-cart" data-name="" data-price="430000" data-id="SN3D2">Thêm vào giỏ hàng</button>
+        </div>
+      </div>
+    </a>
+
+    <a href="./Giohang.html">
+      <div class="product-box">
+        <img src="./img/DipLe/Anniversary/lux3.webp" alt="Tên mẫu" class="product-image" />
+        <div class="product-info">
+          <h4>Choco Anniversary</h4>
+          <p>Giá: 650.000đ</p>
+          <p>Đơn vị: hộp</p>
+          <p>Mã SP: SN3D3</p>
+          <p>Anniversary, Wedding, Valentine</p>
+          <button class="add-to-cart" data-name="" data-price="650000" data-id="SN3D3">Thêm vào giỏ hàng</button>
+        </div>
+      </div>
+    </a>
+
+    <a href="./Giohang.html">
+      <div class="product-box">
+        <img src="./img/DipLe/Anniversary/lux4.jfif" alt="Tên mẫu" class="product-image" />
+        <div class="product-info">
+          <h4>Choco Anniversary</h4>
+          <p>Giá: 690.000đ</p>
+          <p>Đơn vị: hộp</p>
+          <p>Mã SP: SN3D3</p>
+          <p>Anniversary, Wedding, Valentine</p>
+          <button class="add-to-cart" data-name="" data-price="690000" data-id="SN3D3">Thêm vào giỏ hàng</button>
+        </div>
+      </div>
+    </a>
+    <a href="./Giohang.html">
+      <div class="product-box">
+        <img src="./img/DipLe/Anniversary/lux5.webp" alt="Tên mẫu" class="product-image" />
+        <div class="product-info">
+          <h4>Choco Anniversary</h4>
+          <p>Giá: 750.000đ</p>
+          <p>Đơn vị: hộp</p>
+          <p>Mã SP: SN3D3</p>
+          <p>Anniversary, Wedding, Valentine</p>
+          <button class="add-to-cart" data-name="" data-price="750000" data-id="SN3D3">Thêm vào giỏ hàng</button>
+        </div>
+      </div>
+    </a>
+
+        <a href="./Giohang.html">
+      <div class="product-box">
+        <img src="./img/DipLe/Anniversary/lux6.jpg" alt="Tên mẫu" class="product-image" />
+        <div class="product-info">
+          <h4>Choco Anniversary</h4>
+          <p>Giá: 450.000đ</p>
+          <p>Đơn vị: hộp</p>
+          <p>Mã SP: SN3D3</p>
+          <p>Anniversary, Wedding, Valentine</p>
+          <button class="add-to-cart" data-name="" data-price="450000" data-id="SN3D3">Thêm vào giỏ hàng</button>
+        </div>
+      </div>
+    </a>
+        <a href="./Giohang.html">
+      <div class="product-box">
+        <img src="./img/DipLe/Anniversary/lux7.png" alt="Tên mẫu" class="product-image" />
+        <div class="product-info">
+          <h4>Choco Anniversary</h4>
+          <p>Giá: 550.000đ</p>
+          <p>Đơn vị: hộp</p>
+          <p>Mã SP: SN3D3</p>
+          <p>Anniversary, Wedding, Valentine</p>
+          <button class="add-to-cart" data-name="" data-price="550000" data-id="SN3D3">Thêm vào giỏ hàng</button>
+        </div>
+      </div>
+    </a>
+
+  </section>
+
+  <section id="section3">
+    <div class="footer-content">
+        <div class="cta">
+            <h2>Khám Phá Thêm Các Mẫu Chocolate Đặc Biệt</h2>
+            <p>Đừng bỏ lỡ những mẫu Chocolate mới nhất của chúng tôi! Chúng tôi luôn có những thiết kế độc đáo cho mọi dịp lễ.</p>
+            <a href="./home.html" class="cta-btn">Khám Phá Ngay</a>
+        </div>
+        
+        <div class="contact-info">
+            <h3>Thông Tin Liên Hệ</h3>
+            <p>Email: tt721886@gmail.com</p>
+            <p>Điện thoại: 0878634443</p>
+            <p>Địa chỉ: 537 Vườn Lài, An Phú Đông</p>
+        </div>
+        
+        <div class="social-links">
+            <a href="https://facebook.com" target="_blank" class="social-icon">Facebook</a>
+            <a href="https://instagram.com" target="_blank" class="social-icon">Instagram</a>
+            <a href="https://twitter.com" target="_blank" class="social-icon">Twitter</a>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Choco Online. Tất cả quyền được bảo lưu.</p>
+        </div>
+    </div>
+</section>
+
+<footer style="border: 3px solid red;margin-top: 200px;text-align: center;">
+  <p style="margin-top: 15px;">BÀI TẬP LỚN : HỆ THỐNG VÀ CÔNG NGHỆ WEB - DHKHMT18BTT - 22696241 - THÁI VĂN TRUNG</p>
+</footer>
+
+
+
+
+  <script>
+    const images = [
+      './img/s1-removebg-preview.png',
+      './img/log1-removebg-preview.png',
+      './img/s2-removebg-preview.png',
+      './img/s3-removebg-preview.png',
+      './img/s4-removebg-preview.png',
+      './img/s5-removebg-preview.png',
+      './img/csl6-removebg-preview.png'
+    ];
+
+    let index = 0;
+    const sliderImg = document.getElementById("slider-image");
+
+    setInterval(() => {
+      sliderImg.style.opacity = 0;
+      setTimeout(() => {
+        index = (index + 1) % images.length;
+        sliderImg.src = images[index];
+        sliderImg.style.opacity = 1;
+      }, 1000);
+    }, 3000);
+  </script>
+
+  <!-- JS Hiển thị người dùng -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const isLoggedIn = localStorage.getItem("isLoggedIn") === "true"; // So sánh chính xác
+      const username = localStorage.getItem("username");
+  
+      const authButtons = document.getElementById("auth-buttons");
+      const userInfo = document.getElementById("user-info");
+      const nameDisplay = document.getElementById("user-name");
+  
+      if (isLoggedIn && username) {
+        authButtons.style.display = "none";
+        userInfo.style.display = "flex";
+        if (nameDisplay) {
+          nameDisplay.textContent = `👤 ${username}`;
+        }
+      } else {
+        // Hiển thị lại nút đăng nhập / đăng ký
+        authButtons.style.display = "block";
+        userInfo.style.display = "none";
+      }
+    });
+  </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const buttons = document.querySelectorAll('.add-to-cart');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', function (e) {
+        e.preventDefault(); // Ngăn thẻ <a> chuyển trang ngay lập tức
+        e.stopPropagation(); // Ngăn sự kiện nổi bọt
+
+        const id = this.getAttribute('data-id');
+        const rawName = this.getAttribute('data-name');
+        const name = rawName && rawName.trim() !== ""
+          ? rawName
+          : this.closest('.product-info')?.querySelector('h4')?.textContent.replace('Tên mẫu: ', '') || 'Không tên';
+        const price = parseInt(this.getAttribute('data-price')) || 0;
+
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Kiểm tra sản phẩm đã tồn tại hay chưa
+        const existingProduct = cart.find(p => p.id === id);
+        if (!existingProduct) {
+          cart.push({ id, name, price, quantity: 1 });
+          localStorage.setItem('cart', JSON.stringify(cart));
+          alert('Đã thêm vào giỏ hàng!');
+        } else {
+          existingProduct.quantity += 1;
+          localStorage.setItem('cart', JSON.stringify(cart));
+          alert('Đã tăng số lượng sản phẩm trong giỏ!');
+        }
+
+        // Chuyển đến trang giỏ hàng
+       
+      });
+    });
+  });
+</script>
+
+
+  
+  <script src="./js/Login_signup.js"></script>
+
+</body>
+</html>

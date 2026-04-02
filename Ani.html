@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anniversary</title>
+
+ 
+  <link rel="stylesheet" href="./css/home.css">
+  <link rel="stylesheet" href="./js/bootstrap.css">
+  <link rel="stylesheet" href="./js/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/Login_Signup.css">
+
+
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="./js/bootstrap.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
+
+  <style>
+     
+    #section3 {
+    background-color: #f4f4f4;
+    padding: 50px 20px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cta {
+    margin-bottom: 30px;
+}
+
+.cta h2 {
+    font-size: 2.5em;
+    color: #333;
+}
+
+.cta p {
+    font-size: 1.2em;
+    color: #666;
+    margin: 10px 0;
+}
+
+.cta-btn {
+    background-color: #ff7f50;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 1.2em;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.cta-btn:hover {
+    background-color: #e06740;
+}
+
+.contact-info {
+    margin-bottom: 30px;
+}
+
+.contact-info h3 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    font-size: 1.1em;
+    color: #666;
+}
+
+.social-links {
+    margin-bottom: 30px;
+}
+
+.social-links .social-icon {
+    text-decoration: none;
+    font-size: 1.5em;
+    color: #333;
+    margin: 0 15px;
+    transition: color 0.3s;
+}
+
+.social-links .social-icon:hover {
+    color: #ff7f50;
+}
+
+.footer-bottom {
+    font-size: 1em;
+    color: #666;
+    margin-top: 20px;
+}
+
+  
+  </style>
+  
+</head>
+<body>
+
+  <header>
+    <div id="auth-buttons">
+      <button id="login-btn">Đăng nhập</button>
+      <button id="signup-btn">Đăng ký</button>
+
+    </div>
+
+    <div id="login-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="close-login">&times;</span>
+        <h3>Đăng nhập</h3>
+        <form id="login-form">
+          <label for="username">Tài khoản:</label>
+          <input type="text" id="username" name="username" required>
+          <div id="login-username-error" class="error-message"></div>
+
+          <label for="password">Mật khẩu:</label>
+          <input type="password" id="password" name="password" required>
+          <div id="login-password-error" class="error-message"></div>
+
+          <button type="submit">Đăng nhập</button>
+        </form>
+        <p class="switch">Chưa có tài khoản? <a href="#" id="switch-to-signup">Đăng ký ngay</a></p>
+      </div>
+    </div>
+
+    <div id="signup-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="close-signup">&times;</span>
+        <h3>Đăng ký</h3>
+        <form id="signup-form">
+          <label for="new-username">Tên tài khoản:</label>
+          <input type="text" id="new-username" name="new-username" required>
+          <div id="signup-username-error" class="error-message"></div>
+
+          <label for="new-password">Mật khẩu:</label>
+          <input type="password" id="new-password" name="new-password" required>
+          <div id="signup-password-error" class="error-message"></div>
+
+          <label for="phone">SĐT:</label>
+          <input type="tel" id="phone" name="phone" required>
+          <div id="signup-phone-error" class="error-message"></div>
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+          <div id="signup-email-error" class="error-message"></div>
+
+          <button type="submit">Đăng ký</button>
+        </form>
+        <p class="switch">Đã có tài khoản? <a href="#" id="switch-to-login">Đăng nhập</a></p>
+      </div>
+    </div>
+
+
+
+    <div id="user-info" style="
+    display: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+    padding-right: 20px;
+    position: relative;">
+    
+    <span style="
+      position: absolute;
+      left: 480px;
+      top: 20px;
+      font-size: 24px;
+      font-weight: bold;
+      color: aliceblue;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-shadow: 1px 1px 2px #ccc;">
+      ✨ Chào mừng đến với thế giới Love Chocolate ✨
+    </span>
+  
+    <span id="user-name">👤</span>
+    <a href="./Giohang.html" style="text-decoration: none;"><span id="cart-count" style="color: black;">🛒</span></a>
+    
+    <button id="logout-btn" class="logout-button">Đăng xuất</button>
+
+  </div>
+  
+    
+    
+
+     <div id="navheader">
+      <ul>
+        <li><a href="./home.html">Trang Chủ</a></li>
+        <li>
+        <a href="#">Hàng ngoại nhập</a>
+          <ul id="sub_menu_wedding">
+            <li><a href="./MrBeast.html">Mr Beast</a></li>
+            <li><a href="./Hershey.html">Her'shey</a></li>
+            <li><a href="./Kitkat.html">Kitkat</a></li>
+          </ul>
+        </li>
+        <li>
+        <a href="./home.html">Hàng Việt Nam</a>
+          <ul id="submenu_thoinoi">
+            <li><a href="./Thechoco.html">The Choco</a></li>
+            <li><a href="./MaisonMarou.html">Maison Marou</a></li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="#">Quà tặng</a>
+          <ul id="submenu_giangsinh">
+            <li><a href="./Basic.html">Basic</a></li>
+            <li><a href="./Luxury.html">Luxury</a></li>
+          </ul>
+        </li>
+
+
+        <li>
+          <a href="#">Dịp lễ</a>
+          <ul id="submenu_sinhnhat">
+            <li><a href="./Ngayle.html">Ngày lễ</a></li>
+            <li><a href="./Ani.html">Kỉ niệm</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Liên Hệ</a>
+          <ul id="submenu_lienhe">
+            <li><a href="#">Phone/Zalo : 0878634443</a></li>
+            <li><a href="#">Email : tt721886@gmail.com</a></li>
+          </ul>
+        
+        
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <section id="section1">
+    <div class="intro-container">
+      <div class="intro-text">
+        <h2>Chào mừng đến với Thế giới Thiệp Online!</h2>
+        <p>
+          Chúng tôi cung cấp các mẫu thiệp độc đáo cho các dịp đặc biệt như 
+          <strong>thiệp cưới</strong>, <strong>thiệp Giáng Sinh</strong>, 
+          và <strong>thiệp thôi nôi</strong>. Mỗi sản phẩm là một thông điệp yêu thương
+          được thiết kế tỉ mỉ và đầy cảm xúc.
+        </p>
+        <p>
+          Hãy để những tấm thiệp của chúng tôi thay bạn gửi lời chúc tốt đẹp 
+          đến những người thân yêu.
+        </p>
+      </div>
+      <div class="intro-slider">
+        <img id="slider-image" src="./img/DipLe/Anniversary/lux3-removebg-preview.png" alt="Thiệp mẫu">
+      </div>
+    </div>
+  </section>
+
+  <section id="section2">
+    <a href="./Giohang.html">
+      <div class="product-box">
+        <img src="./img/DipLe/Anniversary/vl1.jpg" alt="Tên mẫu" class="product-image" />
+        <div class="product-info">
+          <h4>Valentine Love</h4>
+          <p>Giá: 310.000đ</p>
+          <p>Đơn vị : hộp 36 viên</p>
+          <p>Mã SP: SN3D1</p>
+          <p>Valentine, Wedding, Anniversary</p>
+          <button class="add-to-cart" data-name="" data-price="310000" data-id="SN3D1">Thêm vào giỏ hàng</button>
+        </div>
+      </div>
+    </a>
+
+    <a href="./Giohang.html">
+      <div class="product-box">
+        <img src="./img/DipLe/Anniversary/vl2.jpg" alt="Tên mẫu" class="product-image" />
+        <div class="product-info">
+          <h4>Luxury Choco Pay</h4>
+          <p>Giá: 430.000đ</p>
+          <p>Đơn vị: hộp 20 viên</p>
+          <p>Mã SP: SN3D2</p>
+          <p>Valentine, Wedding, Anniversary</p>
+          <button class="add-to-cart" data-name="" data-price="430000" data-id="SN3D2">Thêm vào giỏ hàng</button>
+        </div>
+      </div>
+    </a>
+
+    <a href="./Giohang.html">
+      <div class="product-box">
+        <img src="./img/DipLe/Anniversary/lux3.webp" alt="Tên mẫu" class="product-image" />
+        <div class="product-info">
+          <h4>Choco Anniversary</h4>
+          <p>Giá: 650.000đ</p>
+          <p>Đơn vị: hộp</p>
+          <p>Mã SP: SN3D3</p>
+          <p>Anniversary, Wedding, Valentine</p>
+          <button class="add-to-cart" data-name="" data-price="650000" data-id="SN3D3">Thêm vào giỏ hàng</button>
+        </div>
+      </div>
+    </a>
+
+    <a href="./Giohang.html">
+      <div class="product-box">
+        <img src="./img/DipLe/Anniversary/lux4.jfif" alt="Tên mẫu" class="product-image" />
+        <div class="product-info">
+          <h4>Choco Anniversary</h4>
+          <p>Giá: 690.000đ</p>
+          <p>Đơn vị: hộp</p>
+          <p>Mã SP: SN3D3</p>
+          <p>Anniversary, Wedding, Valentine</p>
+          <button class="add-to-cart" data-name="" data-price="690000" data-id="SN3D3">Thêm vào giỏ hàng</button>
+        </div>
+      </div>
+    </a>
+    <a href="./Giohang.html">
+      <div class="product-box">
+        <img src="./img/DipLe/Anniversary/lux5.webp" alt="Tên mẫu" class="product-image" />
+        <div class="product-info">
+          <h4>Choco Anniversary</h4>
+          <p>Giá: 750.000đ</p>
+          <p>Đơn vị: hộp</p>
+          <p>Mã SP: SN3D3</p>
+          <p>Anniversary, Wedding, Valentine</p>
+          <button class="add-to-cart" data-name="" data-price="750000" data-id="SN3D3">Thêm vào giỏ hàng</button>
+        </div>
+      </div>
+    </a>
+
+        <a href="./Giohang.html">
+      <div class="product-box">
+        <img src="./img/DipLe/Anniversary/lux6.jpg" alt="Tên mẫu" class="product-image" />
+        <div class="product-info">
+          <h4>Choco Anniversary</h4>
+          <p>Giá: 450.000đ</p>
+          <p>Đơn vị: hộp</p>
+          <p>Mã SP: SN3D3</p>
+          <p>Anniversary, Wedding, Valentine</p>
+          <button class="add-to-cart" data-name="" data-price="450000" data-id="SN3D3">Thêm vào giỏ hàng</button>
+        </div>
+      </div>
+    </a>
+        <a href="./Giohang.html">
+      <div class="product-box">
+        <img src="./img/DipLe/Anniversary/lux7.png" alt="Tên mẫu" class="product-image" />
+        <div class="product-info">
+          <h4>Choco Anniversary</h4>
+          <p>Giá: 550.000đ</p>
+          <p>Đơn vị: hộp</p>
+          <p>Mã SP: SN3D3</p>
+          <p>Anniversary, Wedding, Valentine</p>
+          <button class="add-to-cart" data-name="" data-price="550000" data-id="SN3D3">Thêm vào giỏ hàng</button>
+        </div>
+      </div>
+    </a>
+
+
+
+  </section>
+
+  <section id="section3">
+    <div class="footer-content">
+        <div class="cta">
+            <h2>Khám Phá Thêm Các Mẫu Chocolate Đặc Biệt</h2>
+            <p>Đừng bỏ lỡ những mẫu Chocolate mới nhất của chúng tôi! Chúng tôi luôn có những thiết kế độc đáo cho mọi dịp lễ.</p>
+            <a href="./home.html" class="cta-btn">Khám Phá Ngay</a>
+        </div>
+        
+        <div class="contact-info">
+            <h3>Thông Tin Liên Hệ</h3>
+            <p>Email: tt721886@gmail.com</p>
+            <p>Điện thoại: 0878634443</p>
+            <p>Địa chỉ: 537 Vườn Lài, An Phú Đông</p>
+        </div>
+        
+        <div class="social-links">
+            <a href="https://facebook.com" target="_blank" class="social-icon">Facebook</a>
+            <a href="https://instagram.com" target="_blank" class="social-icon">Instagram</a>
+            <a href="https://twitter.com" target="_blank" class="social-icon">Twitter</a>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Choco Online. Tất cả quyền được bảo lưu.</p>
+        </div>
+    </div>
+</section>
+
+
+
+  <!-- JS Slider -->
+  <script>
+    const images = [
+      './img/DipLe/Anniversary/lux3-removebg-preview.png',
+      './img/DipLe/Anniversary/lux4-removebg-preview.png',
+      './img/DipLe/Anniversary/lux6-removebg-preview.png',
+      './img/DipLe/Anniversary/vl2-removebg-preview.png'
+      
+    ];
+
+    let index = 0;
+    const sliderImg = document.getElementById("slider-image");
+
+    setInterval(() => {
+      sliderImg.style.opacity = 0;
+      setTimeout(() => {
+        index = (index + 1) % images.length;
+        sliderImg.src = images[index];
+        sliderImg.style.opacity = 1;
+      }, 1000);
+    }, 3000);
+  </script>
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const isLoggedIn = localStorage.getItem("isLoggedIn") === "true"; 
+      const username = localStorage.getItem("username");
+  
+      const authButtons = document.getElementById("auth-buttons");
+      const userInfo = document.getElementById("user-info");
+      const nameDisplay = document.getElementById("user-name");
+  
+      if (isLoggedIn && username) {
+        authButtons.style.display = "none";
+        userInfo.style.display = "flex";
+        if (nameDisplay) {
+          nameDisplay.textContent = `👤 ${username}`;
+        }
+      } else {
+        authButtons.style.display = "block";
+        userInfo.style.display = "none";
+      }
+    });
+  </script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const buttons = document.querySelectorAll('.add-to-cart');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation(); 
+
+        const id = this.getAttribute('data-id');
+        const rawName = this.getAttribute('data-name');
+        const name = rawName && rawName.trim() !== ""
+          ? rawName
+          : this.closest('.product-info')?.querySelector('h4')?.textContent.replace('Tên mẫu: ', '') || 'Không tên';
+        const price = parseInt(this.getAttribute('data-price')) || 0;
+
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Check sản phẩm
+        const existingProduct = cart.find(p => p.id === id);
+        if (!existingProduct) {
+          cart.push({ id, name, price, quantity: 1 });
+          localStorage.setItem('cart', JSON.stringify(cart));
+          alert('Đã thêm vào giỏ hàng!');
+        } else {
+          existingProduct.quantity += 1;
+          localStorage.setItem('cart', JSON.stringify(cart));
+          alert('Đã tăng số lượng sản phẩm trong giỏ!');
+        }
+
+        // Chuyển đến trang giỏ hàng
+        // window.location.href = "./Giohang.html";
+      });
+    });
+  });
+</script>
+
+  
+  <script src="./js/Login_signup.js"></script>
+
+</body>
+</html>
