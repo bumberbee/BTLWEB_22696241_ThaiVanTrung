@@ -19,109 +19,99 @@
 
   <style>
     #cart-container {
-      padding: 40px 20px;
-      font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      margin-top: 100px;
-    }
-
-    h2 {
-      text-align: center;
-      font-size: 32px;
-      color: #e61d1d;
-      margin-bottom: 30px;
-    }
-
-    .cart-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 20px;
-      background-color: #fff;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      margin-bottom: 15px;
-      transition: transform 0.2s ease;
-    }
-
-    .cart-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    }
-
-    .cart-item h4 {
-      font-size: 20px;
-      font-weight: bold;
-      color: #333;
-      margin: 0;
-    }
-
-    .cart-item p {
-      font-size: 14px;
-      color: #777;
-      margin: 5px 0;
-    }
-
-    .remove-btn {
-      background-color: #e61d1d;
-      color: white;
-      border: none;
-      padding: 5px 10px;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    .remove-btn:hover {
-      background-color: #b51a1a;
-    }
-
-    .cart-total {
-      margin-top: 30px;
-      font-size: 20px;
-      font-weight: bold;
-      text-align: right;
-      color: #333;
-    }
-
-    .cart-total p {
-      margin: 10px 0;
-    }
-
-    .empty-cart {
-      text-align: center;
-      margin-top: 30px;
-      font-size: 18px;
-      color: #e61d1d;
-    }
-
-    footer {
-      background-color: #333;
-      padding: 20px;
-      text-align: center;
-      color: #fff;
-      margin-top: 50px;
-    }
-
-    footer p {
-      font-size: 14px;
-    }
-    footer {
-  background: linear-gradient(to right, #ff5f6d, #ffc371);
-  padding: 25px 0;
-  color: white;
-  text-align: center;
-  margin-top: 60px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  border-top: 4px solid #fff;
-  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  margin: 120px auto 40px;
+  padding: 30px;
+  font-family: Arial, sans-serif;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-.footer-content p {
-  margin: 4px 0;
-  font-size: 15px;
+/* Title */
+#cart-container h2 {
+  text-align: center;
+  font-size: 30px;
+  color: #6b2e14;
+  margin-bottom: 30px;
+}
+
+/* Item */
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 20px;
+  background: #fff8f0;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  border-left: 6px solid #ff6b35;
+  transition: all 0.3s ease;
+}
+
+.cart-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Text */
+.cart-item h4 {
+  font-size: 18px;
+  color: #333;
+}
+
+.cart-item p {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Price */
+.cart-item div:last-child p {
+  font-weight: bold;
+  color: #e61d1d;
+  font-size: 16px;
+}
+
+/* Button */
+.remove-btn {
+  background: #e61d1d;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 5px;
+  transition: 0.3s;
+}
+
+.remove-btn:hover {
+  background: #b51a1a;
+}
+
+/* Total */
+.cart-total {
+  margin-top: 25px;
+  text-align: right;
+  font-size: 18px;
+}
+
+#total-price {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ff6b35;
+}
+
+/* Empty */
+.empty-cart {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 18px;
+  color: #999;
+}
+
+/* Footer fix */
+footer {
+  margin-top: 50px;
 }
 
 
@@ -195,10 +185,32 @@
         <p>Giỏ hàng của bạn hiện đang trống.</p>
       </div>
     </section>
+      <section id="section3">
+    <div class="footer-content">
+        <div class="cta">
+            <h2>Khám Phá Thêm Các Mẫu Chocolate Đặc Biệt</h2>
+            <p>Đừng bỏ lỡ những mẫu Chocolate mới nhất của chúng tôi! Chúng tôi luôn có những thiết kế độc đáo cho mọi dịp lễ.</p>
+            <a href="./home.html" class="cta-btn">Khám Phá Ngay</a>
+        </div>
+        
+        <div class="contact-info">
+            <h3>Thông Tin Liên Hệ</h3>
+            <p>Email: tt721886@gmail.com</p>
+            <p>Điện thoại: 0878634443</p>
+            <p>Địa chỉ: 537 Vườn Lài, An Phú Đông</p>
+        </div>
+        
+        <div class="social-links">
+            <a href="https://facebook.com" target="_blank" class="social-icon">Facebook</a>
+            <a href="https://instagram.com" target="_blank" class="social-icon">Instagram</a>
+            <a href="https://twitter.com" target="_blank" class="social-icon">Twitter</a>
+        </div>
+        
+       
+    </div>
+</section>
 
-    <footer>
-      <p>Copyright © 2025</p>
-    </footer>
+
   </div>
 
   <script>
@@ -261,15 +273,7 @@
    
     updateCartDisplay();
   </script>
-  <footer>
-    <div class="footer-content">
-      <p>&copy; 2026 Chocolate Online. All rights reserved.</p>
-      <p>Designed with ❤️ by Your Team</p>
-    </div>
-    <footer style="border: 3px solid red;text-align: center;">
-      <p style="margin-top: 15px;">BÀI TẬP LỚN : HỆ THỐNG VÀ CÔNG NGHỆ WEB - DHKHMT18BTT - 22696241 - THÁI VĂN TRUNG</p>
-    </footer>
-  </footer>
+
   
   
 </body>

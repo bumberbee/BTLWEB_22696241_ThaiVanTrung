@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+
 /* ----------------- CONTAINER ----------------- */
 #container {
   height: auto;
@@ -120,6 +121,7 @@ header {
   width: 100%;
   padding: 20px;
   margin-top: 20px;
+ 
 }
 
 #section1 {
@@ -141,6 +143,7 @@ header {
 #section1:hover {
   transform: scale(1.01);
 }
+
 
 /* hiệu ứng xuất hiện mượt */
 @keyframes fadeInUp {
@@ -423,7 +426,7 @@ a {
 
 
 #section3 {
-  background-color: #f4f4f4;
+  background-color: #f5f5f6;
   padding: 50px 20px;
   text-align: center;
   margin-top: 50px;
@@ -511,4 +514,99 @@ a {
   box-shadow: 0 0 5px rgba(0,0,0,0.1);
   line-height: 1.2;
   z-index: 1000;
+}
+
+#section3 {
+  background: linear-gradient(135deg, #3e1f0d, #6b2e14);
+  padding: 60px 20px 30px;
+  margin-top: 50px;
+  color: white;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  text-align: left;
+}
+
+/* CTA */
+.cta {
+  margin-bottom: 0;
+}
+
+.cta h2 {
+  font-size: 22px;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.cta p {
+  font-size: 14px;
+  color: #ddd;
+  margin-bottom: 15px;
+}
+
+.cta-btn {
+  background-color: #ff6b35;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: #ff8c5a;
+  transform: scale(1.05);
+}
+
+/* Contact */
+.contact-info {
+  margin-bottom: 0;
+}
+
+.contact-info h3 {
+  font-size: 18px;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.contact-info p {
+  font-size: 14px;
+  color: #ddd;
+}
+
+/* Social */
+.social-links {
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.social-links .social-icon {
+  text-decoration: none;
+  color: white;
+  padding: 8px 12px;
+  border: 1px solid white;
+  border-radius: 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.social-links .social-icon:hover {
+  background: white;
+  color: #6b2e14;
+}
+
+/* Bottom */
+.footer-bottom {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 13px;
+  color: #ccc;
+  margin-top: 20px;
 }

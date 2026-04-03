@@ -6,7 +6,12 @@
   z-index: 1000;
   display: flex;
   gap: 10px;
+  
 }
+#login-btn, #signup-btn {
+  background-color: transparent !important;
+}
+
 
 #auth-buttons button {
   padding: 10px 20px;
